@@ -1,0 +1,199 @@
+/* Tema "solder mask": verde PCB, testo color serigrafia, pad dorati. */
+:root {
+	--mask: #0C3B2E;
+	--mask-deep: #082A21;
+	--trace: #1A5A45;
+	--silk: #F1EFE4;
+	--gold: #D6A545;
+	--tin: #AEB8B6;
+	--chamfer: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+}
+
+* { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	background: var(--mask);
+	color: var(--silk);
+	font-family: 'IBM Plex Sans', -apple-system, "Segoe UI", sans-serif;
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+a { color: var(--gold); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+h1, h2, h3 { font-family: 'Chakra Petch', sans-serif; line-height: 1.05; margin: 0; }
+h2 { font-size: 2rem; font-weight: 500; margin-bottom: 1.5rem; }
+img, video { max-width: 100%; }
+
+.board { position: relative; max-width: 1120px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+.board section { padding-top: 3rem; }
+
+/* Piste e vias solo nei margini laterali, nel colore che ha il rame sotto la
+   solder mask. Sotto i 1400px non c'e' margine: spariscono e la pagina resta pulita. */
+.board::before, .board::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -130px;
+	width: 110px;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='640'%3E%3Cg fill='none' stroke='%231A5A45' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 0V120L45 150V300L15 330V640'/%3E%3Cpath d='M35 0V100L65 130V320L35 350V640'/%3E%3Cpath d='M90 0V420L65 445V520L90 545V640'/%3E%3Cpath d='M90 60L102 72V100'/%3E%3C/g%3E%3Cg fill='%23082A21' stroke='%23D6A545' stroke-opacity='.55' stroke-width='3'%3E%3Ccircle cx='102' cy='102' r='5'/%3E%3Ccircle cx='58' cy='585' r='5'/%3E%3Ccircle cx='58' cy='607' r='5'/%3E%3C/g%3E%3C/svg%3E") repeat-y;
+}
+.board::after { left: auto; right: -130px; transform: scaleX(-1); }
+@media (max-width: 1400px) { .board::before, .board::after { display: none; } }
+
+/* ---------- Hero della home ---------- */
+.hero { position: relative; isolation: isolate; overflow: hidden; padding: 3.5rem 1.5rem; background: var(--mask-deep); }
+.hero-inner { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: 190px 1fr; gap: 2.25rem; align-items: center; }
+.hero-inner > img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; clip-path: var(--chamfer); }
+.hero h1 { font-size: 2.75rem; font-weight: 700; }
+.hero-inner p { margin: .5rem 0 1.1rem; font-size: 1.1rem; line-height: 1.45; }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: .3rem 1rem; margin: 0 0 1.25rem; font-size: .95rem; }
+.facts dt { color: var(--gold); font-family: 'Chakra Petch', sans-serif; }
+.facts dd { margin: 0; }
+.reach { display: flex; flex-wrap: wrap; gap: .75rem; }
+.reach a { padding: .35rem .9rem; border: 1px solid var(--gold); text-decoration: none; font-family: 'Chakra Petch', sans-serif; }
+.reach a:first-child { background: var(--gold); color: var(--mask-deep); }
+
+/* Le due foto dei talk. Su schermi larghi fanno da sfondo ai lati dell'hero,
+   tinte dal verde e sfumate verso il centro; su schermi stretti non c'e' spazio
+   ai lati, quindi diventano due foto normali sotto il testo. */
+.talks { display: contents; }
+.talk { margin: 0; font-size: .8rem; line-height: 1.35; }
+.talk b { display: block; font-family: 'Chakra Petch', sans-serif; color: var(--gold); }
+@media (min-width: 1101px) {
+	.talk img { position: absolute; top: 0; z-index: -1; height: 100%; width: auto; max-width: none; filter: grayscale(1) contrast(1.1); mix-blend-mode: luminosity; opacity: .6; }
+	.talk-left img { left: 0; -webkit-mask-image: linear-gradient(90deg, #000 30%, transparent 68%); mask-image: linear-gradient(90deg, #000 30%, transparent 68%); }
+	.talk-right img { right: 0; -webkit-mask-image: linear-gradient(270deg, #000 30%, transparent 68%); mask-image: linear-gradient(270deg, #000 30%, transparent 68%); }
+	.talk figcaption { position: absolute; bottom: .75rem; max-width: 17rem; text-shadow: 0 0 6px var(--mask-deep), 0 0 2px var(--mask-deep); }
+	.talk-left figcaption { left: 1.5rem; }
+	.talk-right figcaption { right: 1.5rem; text-align: right; }
+}
+@media (max-width: 1100px) {
+	.talks { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 760px; margin: 2rem auto 0; }
+	.talk img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; margin-bottom: .5rem; }
+}
+
+/* ---------- Testata delle pagine di dettaglio ---------- */
+.page-head { padding: 2rem 1.5rem 2.5rem; background: var(--mask-deep); }
+.page-head > div { max-width: 1072px; margin: 0 auto; }
+.page-head h1 { margin: 1.25rem 0 .5rem; font-size: clamp(2.2rem, 5vw, 3.25rem); font-weight: 700; }
+.page-head p { margin: 0 0 .75rem; max-width: 60ch; font-size: 1.1rem; }
+
+/* ---------- Blocchi condivisi ---------- */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.prose p { margin: 0 0 1rem; max-width: 62ch; }
+.note { margin: -1rem 0 1.5rem; color: var(--tin); font-size: .95rem; }
+.role { margin: .3rem 0 .1rem; color: var(--gold); font-size: .9rem; }
+.period { margin: 0 0 .8rem; color: var(--tin); font-size: .85rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.tags li { padding: .1rem .5rem; border: 1px solid var(--tin); font-size: .8rem; color: var(--tin); }
+/* Il dominio tecnico del progetto: sempre la prima etichetta, in oro pieno. */
+.tags li.domain { background: var(--gold); border-color: var(--gold); color: var(--mask-deep); }
+
+/* Barra a pad, da 0 a 10: il valore arriva da --v sull'elemento o su un antenato. */
+.pads {
+	display: block;
+	height: 10px;
+	background: linear-gradient(90deg, var(--on, var(--gold)) calc(var(--v) * 10%), var(--off, var(--trace)) 0);
+	-webkit-mask: repeating-linear-gradient(90deg, #000 0 calc(10% - 4px), transparent 0 10%);
+	mask: repeating-linear-gradient(90deg, #000 0 calc(10% - 4px), transparent 0 10%);
+}
+
+/* ---------- Skill ---------- */
+.skill-groups { display: grid; grid-template-columns: auto 1fr; gap: .75rem 1.25rem; align-items: baseline; }
+.skill-groups h3 { font-size: 1rem; font-weight: 500; color: var(--gold); }
+.skills { position: relative; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.skills li { padding: .3rem .75rem; background: var(--mask-deep); border: 1px solid var(--trace); cursor: default; }
+.skills li:hover, .skills li:focus { border-color: var(--gold); }
+/* Il livello resta nascosto finche' non si passa sopra (o si tocca / si arriva
+   col tab): cosi' la lista resta compatta anche quando le skill aumentano. */
+.level { position: absolute; left: 0; top: calc(100% + 4px); z-index: 2; width: 13rem; padding: .6rem .75rem; background: var(--silk); color: var(--mask-deep); font-size: .85rem; visibility: hidden; opacity: 0; transition: opacity .15s; }
+.level::before { content: "Confidence level"; display: block; font-family: 'Chakra Petch', sans-serif; font-weight: 700; }
+.level .pads { margin-top: .4rem; --on: var(--mask); --off: rgba(8, 42, 33, .18); }
+.skills li:hover .level, .skills li:focus .level { visibility: visible; opacity: 1; }
+.hint { margin: 1rem 0 0; font-size: .85rem; color: var(--tin); }
+/* Con spazio a destra il riquadro si apre sotto la skill; altrimenti sotto il
+   gruppo, per non uscire dallo schermo. */
+@media (min-width: 1301px) {
+	.skills li { position: relative; }
+	.level { left: -1px; }
+}
+
+/* ---------- Card dei progetti ---------- */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.card { display: block; background: var(--mask-deep); color: inherit; text-decoration: none; clip-path: var(--chamfer); }
+.card img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.card > div { padding: 1.25rem 1.25rem 1.75rem; }
+.card h3 { font-size: 1.6rem; font-weight: 700; }
+.card p { margin: 0; font-size: .95rem; }
+.card:hover h3 { text-decoration: underline; text-decoration-color: var(--gold); }
+
+/* ---------- Pagine di dettaglio ---------- */
+/* Radar "Project breakdown": stesso markup e stesse classi del sito vecchio, cosi'
+   un grafico si puo' copiare da una pagina all'altra. Le due serie non si
+   distinguono solo per colore: la difficolta' ha anche il contorno tratteggiato. */
+.radar-figure {
+	--viz-s1: var(--gold);   /* Personal Contribution */
+	--viz-s2: var(--silk);   /* Project Difficulty    */
+	margin: 2rem 0 0;
+	padding: 1.5rem;
+	background: var(--mask-deep);
+	clip-path: var(--chamfer);
+	display: grid;
+	grid-template-columns: minmax(260px, 380px) minmax(220px, 1fr);
+	grid-template-areas:
+		"caption caption"
+		"legend  legend"
+		"chart   table";
+	align-items: center;
+	gap: 8px 2rem;
+}
+.radar-caption { grid-area: caption; font-family: 'Chakra Petch', sans-serif; font-size: 1.25rem; }
+.radar-caption span { font-size: 1rem; color: var(--tin); }
+.radar-note { grid-area: legend; margin: 0 0 8px; max-width: 62ch; font-size: .85rem; line-height: 1.5; color: var(--tin); }
+.radar-legend { grid-area: legend; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 0 0 8px; padding: 0; font-size: .85rem; color: var(--tin); }
+.radar-legend li { display: flex; align-items: center; gap: 8px; }
+.radar-swatch { width: 10px; height: 10px; flex-shrink: 0; }
+.radar-svg { grid-area: chart; width: 100%; height: auto; }
+.radar-grid { fill: none; stroke: var(--trace); stroke-width: 1; }
+.radar-grid-outer { stroke: var(--tin); stroke-opacity: .5; }
+.radar-spoke { stroke: var(--trace); stroke-width: 1; }
+.radar-tick { fill: var(--tin); font-size: 9px; text-anchor: middle; }
+.radar-axis-label { fill: var(--silk); font-family: 'Chakra Petch', sans-serif; font-size: 12px; font-weight: 500; }
+.radar-area { fill-opacity: .22; stroke-width: 2; stroke-linejoin: round; }
+.radar-contribution { fill: var(--viz-s1); stroke: var(--viz-s1); }
+.radar-difficulty { fill: var(--viz-s2); stroke: var(--viz-s2); }
+.radar-area.radar-difficulty { fill-opacity: .1; stroke-dasharray: 5 4; }
+.radar-dot.radar-contribution, .radar-dot.radar-difficulty { stroke: none; }
+.radar-table { grid-area: table; border-collapse: collapse; font-size: .9rem; }
+.radar-table th, .radar-table td { padding: 7px 10px; text-align: right; border-bottom: 1px solid var(--trace); white-space: nowrap; }
+.radar-table thead th { font-size: .8rem; font-weight: 400; color: var(--tin); }
+.radar-table tbody th { text-align: left; font-family: 'Chakra Petch', sans-serif; font-weight: 500; color: var(--gold); }
+.radar-table tbody td { font-variant-numeric: tabular-nums; }
+
+/* Galleria: stesso layout del sito vecchio. Celle da 250px in cover; gli scatti
+   verticali (--portrait) hanno una cella piu' alta e stanno dentro interi. */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: start; }
+.gallery-item { display: block; width: 100%; height: 250px; object-fit: cover; background: var(--mask-deep); border: 1px solid var(--trace); transition: transform .3s ease; }
+.gallery-item:hover { transform: scale(1.02); }
+.gallery-item--portrait { height: 460px; object-fit: contain; }
+.gallery-figure { margin: 0; display: flex; flex-direction: column; }
+.gallery-caption { margin-top: 10px; font-size: .9rem; line-height: 1.45; color: var(--tin); }
+
+/* ---------- Contatti ---------- */
+.contact { display: flex; flex-wrap: wrap; gap: .5rem 3rem; margin-top: 4rem; padding-top: 2rem; border-top: 6px solid var(--trace); font-size: 1.15rem; }
+
+@media (max-width: 860px) {
+	.two-col, .cards { grid-template-columns: 1fr; }
+	.hero-inner { grid-template-columns: 1fr; }
+	.hero-inner > img { max-width: 190px; }
+	.radar-figure { grid-template-columns: 1fr; grid-template-areas: "caption" "legend" "chart" "table"; gap: 8px 0; }
+	.radar-table { width: 100%; margin-top: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.level, .gallery-item { transition: none; }
+}

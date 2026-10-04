@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Johnan Luca | Online Portfolio</title>
+	<meta name="description" content="Johnan Luca, MSc Robotics at EPFL. Robots built end to end: mechanics, electronics and software.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+	<div class="hero-inner">
+		<img src="images/profile.jpg" width="483" height="644"
+		     alt="Johnan Luca maintaining the PUPPER quadruped under the AI Team banner at Swiss Robotics Day">
+		<div>
+			<h1>Johnan Luca</h1>
+			<p>I build robots end to end: mechanics, electronics and software.</p>
+			<dl class="facts">
+				<dt>Studies</dt><dd>MSc Robotics, EPFL</dd>
+				<dt>Now</dt><dd>Project leader and hardware designer of BYTE, at the AI Team</dd>
+				<dt>Focus</dt><dd>Most at home in electronics, working across mechanics and software</dd>
+			</dl>
+			<div class="reach">
+				<a href="mailto:johnan.luca@outlook.com">Email me</a>
+				<a href="https://www.linkedin.com/in/johnan-luca" target="_blank" rel="noopener">LinkedIn</a>
+			</div>
+		</div>
+	</div>
+	<div class="talks">
+		<figure class="talk talk-left">
+			<img src="images/talk-1.jpg" alt="Johnan Luca presenting on stage with a microphone, a project timeline on the screen behind him">
+			<figcaption><b>End of Semester Review, AI Team</b>Best team project, and best active project member for the second time running.</figcaption>
+		</figure>
+		<figure class="talk talk-right">
+			<img src="images/talk-2.jpg" alt="Johnan Luca speaking into a microphone next to a screen showing circuit schematics">
+			<figcaption><b>XRC Competition, Xplore</b>Invited as guests to present our work.</figcaption>
+		</figure>
+	</div>
+</header>
+
+<main class="board">
+
+	<section class="two-col">
+		<div class="prose" id="about">
+			<h2>About</h2>
+			<p>Passionate about general robotics, MedTech, and exploring applications in extreme environments. I spend my time developing mechatronic and robotic projects, and building the custom embedded systems that make them move.</p>
+			<p>Most of that work happens inside BARK, the robotics group of the AI Team, a student association at EPFL. I moved from DINGO's electronic sub-team to leading the project, then led the sub-team behind PUPPER (where I designed the custom robotic arm from scratch) and I now lead BYTE as project leader and hardware designer, responsible for its pre-charge circuit and power distribution board.</p>
+			<p>What keeps pulling me back is the layer where electronics and software mix: high-current distribution, motor and servo driving, and the firmware that has to hold it all together. It is also the layer I still have the most to learn about. On my own I tinker with the same problems at a much smaller scale, from a teleoperated five-axis arm to a smart lamp.</p>
+		</div>
+
+		<div id="skills">
+			<h2>Skills</h2>
+			<!-- Per aggiungere una skill: copia un <li> nel gruppo giusto e cambia
+			     nome, --v (da 0 a 10) e il testo del livello. -->
+			<div class="skill-groups">
+				<h3>Electronics</h3>
+				<ul class="skills">
+					<li tabindex="0" style="--v:6.5">PCB Design<span class="level">Intermediate, 6.5 out of 10<i class="pads"></i></span></li>
+					<li tabindex="0" style="--v:5.5">Power Electronics<span class="level">Intermediate, 5.5 out of 10<i class="pads"></i></span></li>
+					<li tabindex="0" style="--v:8.5">KiCad<span class="level">Advanced, 8.5 out of 10<i class="pads"></i></span></li>
+				</ul>
+				<h3>Mechanics</h3>
+				<ul class="skills">
+					<li tabindex="0" style="--v:6.5">CATIA V5<span class="level">Intermediate, 6.5 out of 10<i class="pads"></i></span></li>
+					<li tabindex="0" style="--v:7">Fusion360<span class="level">Intermediate, 7 out of 10<i class="pads"></i></span></li>
+					<li tabindex="0" style="--v:9">3D Printing<span class="level">Advanced, 9 out of 10<i class="pads"></i></span></li>
+				</ul>
+				<h3>Software</h3>
+				<ul class="skills">
+					<li tabindex="0" style="--v:7">C / C++ / Python<span class="level">Intermediate, 7 out of 10<i class="pads"></i></span></li>
+					<li tabindex="0" style="--v:6">Embedded Systems<span class="level">Intermediate, 6 out of 10<i class="pads"></i></span></li>
+					<li tabindex="0" style="--v:6">RTOS<span class="level">Intermediate, 6 out of 10<i class="pads"></i></span></li>
+					<li tabindex="0" style="--v:6">ROS2<span class="level">Intermediate, 6 out of 10<i class="pads"></i></span></li>
+				</ul>
+				<h3>Soft skills</h3>
+				<ul class="skills">
+					<li tabindex="0" style="--v:9">Team Leadership<span class="level">Advanced, 9 out of 10<i class="pads"></i></span></li>
+					<li tabindex="0" style="--v:7">Public Speaking<span class="level">Intermediate, 7 out of 10<i class="pads"></i></span></li>
+				</ul>
+			</div>
+			<p class="hint">Hover or tap a skill to see how confident I am with it.</p>
+		</div>
+	</section>
+
+	<section id="experience">
+		<h2>Experience</h2>
+		<div class="cards">
+
+			<a class="card" href="experience_eiii_hackathon.html">
+				<img src="images/robomaestro_index_card.jpg" loading="lazy" alt="The Piano Maestro humanoid reaching for the keys of an upright piano">
+				<div>
+					<h3>Robotics Retreat Hackathon</h3>
+					<div class="role">EIII AG, Leukerbad, Switzerland</div>
+					<div class="period">August 2026</div>
+					<p>Ten days on site building the Piano Maestro Robot with a multidisciplinary team, from first concept to a system that plays.</p>
+					<ul class="tags"><li class="domain">Software</li><li>Robotics</li><li>Rapid Prototyping</li><li>Teamwork</li></ul>
+				</div>
+			</a>
+
+			<!-- TEMPLATE: copia questo blocco per ogni nuova esperienza o progetto e crea
+			     la pagina di dettaglio partendo da una di quelle esistenti.
+			     La prima etichetta (class="domain") e' il dominio tecnico: Electronics,
+			     Mechanics o Software. Se ne servono due, metti due <li class="domain">.
+			<a class="card" href="experience_nome.html">
+				<img src="images/nome_index_card.jpg" loading="lazy" alt="Descrizione della foto">
+				<div>
+					<h3>Ruolo o nome</h3>
+					<div class="role">Ruolo, oppure azienda e luogo</div>
+					<div class="period">Periodo</div>
+					<p>Una o due frasi su cosa hai costruito.</p>
+					<ul class="tags"><li class="domain">Electronics</li><li>Skill</li></ul>
+				</div>
+			</a>
+			-->
+
+		</div>
+	</section>
+
+	<section id="bark-projects">
+		<h2>BARK projects</h2>
+		<p class="note">BARK is the robotics group of the AI Team, a student association at EPFL.</p>
+		<div class="cards">
+
+			<a class="card" href="project_byte.html">
+				<img src="images/byte_index_card.jpg" loading="lazy" alt="BYTE quadruped robot">
+				<div>
+					<h3>BYTE</h3>
+					<div class="role">Project leader and hardware designer</div>
+					<div class="period">2026 to now</div>
+					<p>Led the BARK team in the development of a quadruped robot called BYTE, while personally designing the Pre-Charge Circuit and PDB to manage high-current distribution and inrush current protection.</p>
+					<ul class="tags"><li class="domain">Electronics</li><li>PCB Design</li><li>Power Electronics</li></ul>
+				</div>
+			</a>
+
+			<a class="card" href="project_pupper.html">
+				<img src="images/pupper_index_card.jpg" loading="lazy" alt="PUPPER, the red quadruped, on show at the AI Team stand">
+				<div>
+					<h3>PUPPER</h3>
+					<div class="role">Sub-team leader</div>
+					<div class="period">2025 to now</div>
+					<p>Led a sub-team within the BARK project to build Stanford's open-source Pupper V3. Co-assembled the quadruped platform and independently designed the custom robotic arm from scratch.</p>
+					<ul class="tags"><li class="domain">Mechanics</li></ul>
+				</div>
+			</a>
+
+			<a class="card" href="project_dingo.html">
+				<img src="images/dingo_index_card.jpg" loading="lazy" alt="DINGO head-on, its open chassis showing the electronics inside">
+				<div>
+					<h3>DINGO</h3>
+					<div class="role">Electronics sub-team member, promoted to team leader</div>
+					<div class="period">2024 to 2025</div>
+					<p>Inherited a non-functional electronics system for the DINGO robot, then troubleshot and corrected the hardware back in line with Stanford's original open-source specifications.</p>
+					<ul class="tags"><li class="domain">Electronics</li><li>Troubleshooting</li><li>Sensors</li></ul>
+				</div>
+			</a>
+
+		</div>
+	</section>
+
+	<section id="personal-projects">
+		<h2>Personal projects</h2>
+		<div class="cards">
+
+			<a class="card" href="project_roboarm.html">
+				<img src="images/roboarm_index_card.jpeg" loading="lazy" alt="The 3D-printed five-axis robotic arm">
+				<div>
+					<h3>Teleoperated Robo-Arm</h3>
+					<div class="role">Solo developer</div>
+					<p>Assembled a 3D-printed 5-axis arm from an open-source Thingiverse model, and designed the electronics and embedded control logic from scratch to drive it over Bluetooth.</p>
+					<ul class="tags"><li class="domain">Electronics</li><li class="domain">Software</li><li>C++</li><li>Bluetooth</li></ul>
+				</div>
+			</a>
+
+			<a class="card" href="project_smart_heng_lamp.html">
+				<img src="images/smart_heng_lamp_index_card.jpg" loading="lazy" alt="Smart Heng Lamp: the balance lamp lit, with the custom base and its screen showing the clock">
+				<div>
+					<h3>Smart Heng Lamp</h3>
+					<div class="role">Solo developer</div>
+					<p>Developed a smart lamp with Bluetooth connectivity and programmable LED effects.</p>
+					<ul class="tags"><li class="domain">Software</li><li>C</li><li>RTOS</li><li>Embedded Systems</li></ul>
+				</div>
+			</a>
+
+		</div>
+	</section>
+
+	<footer class="contact" id="contact">
+		<a href="mailto:johnan.luca@outlook.com">johnan.luca@outlook.com</a>
+		<a href="https://www.linkedin.com/in/johnan-luca" target="_blank" rel="noopener">linkedin.com/in/johnan-luca</a>
+	</footer>
+
+</main>
+
+</body>
+</html>

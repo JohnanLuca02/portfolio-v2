@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DINGO | Johnan Luca</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="page-head">
+	<div>
+		<a href="index.html#bark-projects">Back to BARK projects</a>
+		<h1>DINGO</h1>
+		<p>Open-source quadruped robot platform</p>
+		<div class="role">Electronics sub-team member, promoted to team leader</div>
+		<div class="period">2024 to 2025</div>
+		<ul class="tags"><li class="domain">Electronics</li><li>Troubleshooting</li><li>Sensors</li></ul>
+	</div>
+</header>
+
+<main class="board">
+
+	<section>
+		<div class="prose">
+			<h2>Overview</h2>
+			<p><strong>Mechatronics Engineer (Electronics Sub-team):</strong> Inherited a non-functional electronics system for the DINGO robot from previous members. Successfully troubleshot, corrected, and brought the hardware fully back in line with Stanford's original open-source specifications.</p>
+			<p><strong>Project Leader:</strong> Promoted to lead the BARK project, overseeing the entire multidisciplinary team. Continuing and finishing the open-source project.</p>
+		</div>
+
+		<figure class="radar-figure">
+			<figcaption class="radar-caption">Project breakdown <span>(0&ndash;10)</span></figcaption>
+			<ul class="radar-legend">
+				<li><span class="radar-swatch" style="background:var(--viz-s1);"></span>Personal Contribution</li>
+				<li><span class="radar-swatch" style="background:var(--viz-s2);"></span>Project Difficulty</li>
+			</ul>
+			<svg class="radar-svg" viewBox="0 0 340 225" role="img" aria-label="Radar chart: Personal Contribution, Project Difficulty across Mechanics, Electronics and Software">
+				<polygon class="radar-grid" points="170.0,116.0 186.5,144.5 153.5,144.5"/>
+				<polygon class="radar-grid" points="170.0,97.0 202.9,154.0 137.1,154.0"/>
+				<polygon class="radar-grid" points="170.0,78.0 219.4,163.5 120.6,163.5"/>
+				<polygon class="radar-grid" points="170.0,59.0 235.8,173.0 104.2,173.0"/>
+				<polygon class="radar-grid radar-grid-outer" points="170.0,40.0 252.3,182.5 87.7,182.5"/>
+				<line class="radar-spoke" x1="170.0" y1="135.0" x2="170.0" y2="40.0"/>
+				<line class="radar-spoke" x1="170.0" y1="135.0" x2="252.3" y2="182.5"/>
+				<line class="radar-spoke" x1="170.0" y1="135.0" x2="87.7" y2="182.5"/>
+				<polygon class="radar-area radar-contribution" points="170.0,68.5 244.0,177.8 145.3,149.2"/>
+				<polygon class="radar-area radar-difficulty" points="170.0,78.0 235.8,173.0 153.5,144.5"/>
+				<circle class="radar-dot radar-contribution" cx="170.0" cy="68.5" r="4"/>
+				<circle class="radar-dot radar-contribution" cx="244.0" cy="177.8" r="4"/>
+				<circle class="radar-dot radar-contribution" cx="145.3" cy="149.2" r="4"/>
+				<circle class="radar-dot radar-difficulty" cx="170.0" cy="78.0" r="4"/>
+				<circle class="radar-dot radar-difficulty" cx="235.8" cy="173.0" r="4"/>
+				<circle class="radar-dot radar-difficulty" cx="153.5" cy="144.5" r="4"/>
+				<text class="radar-tick" x="163.0" y="138.0">0</text>
+				<text class="radar-tick" x="163.0" y="119.0">2</text>
+				<text class="radar-tick" x="163.0" y="100.0">4</text>
+				<text class="radar-tick" x="163.0" y="81.0">6</text>
+				<text class="radar-tick" x="163.0" y="62.0">8</text>
+				<text class="radar-tick" x="163.0" y="43.0">10</text>
+				<text class="radar-axis-label" x="170.0" y="28.0" text-anchor="middle">Mechanics</text>
+				<text class="radar-axis-label" x="256.3" y="202.5" text-anchor="end">Electronics</text>
+				<text class="radar-axis-label" x="83.7" y="202.5" text-anchor="start">Software</text>
+			</svg>
+			<table class="radar-table">
+				<thead><tr><th scope="col">Area</th><th scope="col">Personal Contribution</th><th scope="col">Project Difficulty</th></tr></thead>
+				<tbody>
+					<tr><th scope="row">Mechanics</th><td>7</td><td>6</td></tr>
+					<tr><th scope="row">Electronics</th><td>9</td><td>8</td></tr>
+					<tr><th scope="row">Software</th><td>3</td><td>2</td></tr>
+				</tbody>
+			</table>
+		</figure>
+	</section>
+
+	<section>
+		<h2>Gallery</h2>
+		<div class="gallery-grid">
+
+			<!-- TODO: replace with images/dingo-render.jpg once available -->
+
+			<!-- TODO: replace with images/dingo-precharge-circuit.jpg once available -->
+
+			<!-- Vecchia index card: DINGO sul banco, telaio aperto sull'elettronica. -->
+			<img src="images/dingo_assembled.jpg" width="1200" height="900" loading="lazy"
+				 alt="The assembled DINGO robot on a workbench, its open chassis showing the wiring and boards"
+				 class="gallery-item">
+
+			<figure class="gallery-figure">
+				<!-- TODO: didascalia dedotta dal nome del file, controlla che descriva il clip. -->
+				<video class="gallery-item gallery-item--portrait" controls preload="metadata" playsinline>
+					<source src="videos/dingo_move.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<figcaption class="gallery-caption">DINGO moving under its own control after the electronics were repaired.</figcaption>
+			</figure>
+
+			<figure class="gallery-figure">
+				<!-- TODO: didascalia dedotta dal nome del file, controlla che descriva il clip. -->
+				<video class="gallery-item gallery-item--portrait" controls preload="metadata" playsinline>
+					<source src="videos/dingo_troubleshoot.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<figcaption class="gallery-caption">Troubleshooting the electronics inherited with the robot.</figcaption>
+			</figure>
+
+		</div>
+	</section>
+
+	<footer class="contact">
+		<a href="mailto:johnan.luca@outlook.com">johnan.luca@outlook.com</a>
+		<a href="https://www.linkedin.com/in/johnan-luca" target="_blank" rel="noopener">linkedin.com/in/johnan-luca</a>
+	</footer>
+
+</main>
+
+</body>
+</html>

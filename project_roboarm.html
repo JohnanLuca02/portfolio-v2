@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Teleoperated Robo-Arm | Johnan Luca</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="page-head">
+	<div>
+		<a href="index.html#personal-projects">Back to personal projects</a>
+		<h1>Teleoperated Robo-Arm</h1>
+		<p>Teleoperated 5-axis robotic arm with custom electronics and control</p>
+		<div class="role">Solo developer</div>
+		<ul class="tags"><li class="domain">Electronics</li><li class="domain">Software</li><li>C++</li><li>Bluetooth</li></ul>
+	</div>
+</header>
+
+<main class="board">
+
+	<section>
+		<div class="prose">
+			<h2>Overview</h2>
+			<p>A remote-controlled 5-axis robotic arm. The mechanical structure is a 3D-printed open-source model sourced from Thingiverse, which I printed and assembled. The engineering work went into everything that drives it.</p>
+			<p>I designed the control electronics and the embedded logic from scratch: servo driving, the Bluetooth link for teleoperation, and the firmware coordinating the five axes. This is why the breakdown rates mechanical difficulty low and electronics and software high.</p>
+		</div>
+
+		<figure class="radar-figure">
+			<figcaption class="radar-caption">Project Difficulty <span>(0&ndash;10)</span></figcaption>
+			<p class="radar-note">Solo project &mdash; personal contribution is 10/10 in every area, so only difficulty is plotted.</p>
+			<svg class="radar-svg" viewBox="0 0 340 225" role="img" aria-label="Radar chart: Project Difficulty across Mechanics, Electronics and Software">
+				<polygon class="radar-grid" points="170.0,116.0 186.5,144.5 153.5,144.5"/>
+				<polygon class="radar-grid" points="170.0,97.0 202.9,154.0 137.1,154.0"/>
+				<polygon class="radar-grid" points="170.0,78.0 219.4,163.5 120.6,163.5"/>
+				<polygon class="radar-grid" points="170.0,59.0 235.8,173.0 104.2,173.0"/>
+				<polygon class="radar-grid radar-grid-outer" points="170.0,40.0 252.3,182.5 87.7,182.5"/>
+				<line class="radar-spoke" x1="170.0" y1="135.0" x2="170.0" y2="40.0"/>
+				<line class="radar-spoke" x1="170.0" y1="135.0" x2="252.3" y2="182.5"/>
+				<line class="radar-spoke" x1="170.0" y1="135.0" x2="87.7" y2="182.5"/>
+				<polygon class="radar-area radar-difficulty" points="170.0,125.5 219.4,163.5 112.4,168.2"/>
+				<circle class="radar-dot radar-difficulty" cx="170.0" cy="125.5" r="4"/>
+				<circle class="radar-dot radar-difficulty" cx="219.4" cy="163.5" r="4"/>
+				<circle class="radar-dot radar-difficulty" cx="112.4" cy="168.2" r="4"/>
+				<text class="radar-tick" x="163.0" y="138.0">0</text>
+				<text class="radar-tick" x="163.0" y="119.0">2</text>
+				<text class="radar-tick" x="163.0" y="100.0">4</text>
+				<text class="radar-tick" x="163.0" y="81.0">6</text>
+				<text class="radar-tick" x="163.0" y="62.0">8</text>
+				<text class="radar-tick" x="163.0" y="43.0">10</text>
+				<text class="radar-axis-label" x="170.0" y="28.0" text-anchor="middle">Mechanics</text>
+				<text class="radar-axis-label" x="256.3" y="202.5" text-anchor="end">Electronics</text>
+				<text class="radar-axis-label" x="83.7" y="202.5" text-anchor="start">Software</text>
+			</svg>
+			<table class="radar-table">
+				<thead><tr><th scope="col">Area</th><th scope="col">Project Difficulty</th></tr></thead>
+				<tbody>
+					<tr><th scope="row">Mechanics</th><td>1</td></tr>
+					<tr><th scope="row">Electronics</th><td>6</td></tr>
+					<tr><th scope="row">Software</th><td>7</td></tr>
+				</tbody>
+			</table>
+		</figure>
+	</section>
+
+	<section>
+		<h2>Gallery</h2>
+		<div class="gallery-grid">
+
+			<!-- TODO: replace with images/roboarm-render.jpg once available -->
+
+			<!-- TODO: replace with the control circuit schematic once available -->
+
+			<!-- TODO: replace with a photo of the fully assembled arm once available -->
+
+			<figure class="gallery-figure">
+				<video class="gallery-item gallery-item--portrait" controls preload="metadata" playsinline>
+					<source src="videos/roboarm_demo.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<figcaption class="gallery-caption">The five-axis arm driven over Bluetooth from the teleoperation controller.</figcaption>
+			</figure>
+
+		</div>
+	</section>
+
+	<footer class="contact">
+		<a href="mailto:johnan.luca@outlook.com">johnan.luca@outlook.com</a>
+		<a href="https://www.linkedin.com/in/johnan-luca" target="_blank" rel="noopener">linkedin.com/in/johnan-luca</a>
+	</footer>
+
+</main>
+
+</body>
+</html>
